@@ -1,6 +1,7 @@
 # Risk or No Risk?
 
 Camille Landesvatter <clandesvmail.uni-mannheim.de>
+Vanisa Vongphanakhone <vvongpha@mail.uni-mannheim.de
 
 ---
 
