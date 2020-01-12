@@ -1,6 +1,6 @@
 # Risk or No Risk?
 
-Camille Landesvatter <clandesvmail.uni-mannheim.de>
+Camille Landesvatter <clandesv@mail.uni-mannheim.de>
 
 Tiffany Myers <tmyers@mail.uni-mannheim.de>
 
