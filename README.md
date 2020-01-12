@@ -1,8 +1,11 @@
 # Risk or No Risk?
 
 Camille Landesvatter <clandesvmail.uni-mannheim.de>
+
 Tiffany Myers <tmyers@mail.uni-mannheim.de>
+
 David Joukl <djoukl@mail.uni-mannheim.de>
+
 Vanisa Vongphanakhone <vvongpha@mail.uni-mannheim.de>
 
 ---
