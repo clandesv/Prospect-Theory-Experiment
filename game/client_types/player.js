@@ -58,7 +58,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 				'Female',
 				"Do not want to say"
 			],
-			//requiredChoice: true,
+			requiredChoice: true,
 			orientation: 'V'
 			},
 			
@@ -71,7 +71,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 					'51-60', '61-70', '71+', 'Do not want to say'
 				],
 				title: false,
-				//requiredChoice: true
+				requiredChoice: true
 			},
 			
 			{
@@ -87,7 +87,7 @@ module.exports = function(treatmentName, settings, stager, setup, gameRoom) {
 				'Do not want to say'
 			],
 			title: false,
-			//requiredChoice: true
+			requiredChoice: true
 			}
 			]
 		}
@@ -115,7 +115,7 @@ stager.extendStep('socio2', {
 				'Do not want to say'
 			],
 			title: false,
-			//requiredChoice: true
+			requiredChoice: true
 			}, 
 			
 			{
@@ -131,7 +131,7 @@ stager.extendStep('socio2', {
 				'Do not want to say'
 			],
 			title: false,
-			//requiredChoice: true
+			requiredChoice: true
 			},
 			
 			{
@@ -157,6 +157,7 @@ stager.extendStep('socio2', {
 		}
 		}
     });
+	
 
 stager.extendStep('mood1', {
 widget: {
@@ -177,7 +178,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -193,7 +194,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -209,7 +210,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -225,7 +226,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -241,7 +242,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -257,7 +258,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -273,7 +274,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -289,7 +290,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -305,7 +306,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -321,7 +322,7 @@ widget: {
 				'4',
 				'5'
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			left: 'Not at all',
 			right: 'Strongly',
 			},
@@ -348,7 +349,7 @@ widget: {
 				'No',
 				"Do not want to say"
 			],
-			// requiredChoice: true,
+			requiredChoice: true,
 			},
 			
 			{
@@ -361,7 +362,7 @@ widget: {
 				"Do not want to say"
 				],
 				title: false,
-			//	requiredChoice: true
+			requiredChoice: true
 			},
 			
 			{
@@ -374,7 +375,7 @@ widget: {
 				"Do not want to say"
 				],
 			title: false,
-			//requiredChoice: true
+			requiredChoice: true
 			},
 			
 			{
@@ -387,7 +388,7 @@ widget: {
 				"Do not want to say"
 				],
 			title: false,
-			//requiredChoice: true
+			requiredChoice: true
 			},
 			
 			{
@@ -400,14 +401,15 @@ widget: {
 				"Do not want to say"
 				],
 			title: false,
-			//requiredChoice: true
+			requiredChoice: true
 			},
 			]
 		}
 		}
     });
 
-stager.extendStep('writing', {
+
+    stager.extendStep('writing', {
       frame: settings.treatments,
       cb: function() {
         var s = node.game.settings;
@@ -429,179 +431,185 @@ stager.extendStep('writing', {
       }
     });
 
+	
+	stager.extendStep('mood2', {
+	frame: settings.treatments,
+	cb: function() {
+    var s = node.game.settings;
+    if (s.treatmentName === 'control') {
+      node.done();
+      return;
+    }
+    var root = W.gid('container');
+      node.game.choiceManager = node.widgets.append('ChoiceManager', 'container', {
+            className: 'centered',
+            mainText: 'How are you feeling right now after completing the writing task?',
+            forms: [
+            {
+                name: 'ChoiceTable',
+                id: 'M2_1',
+                mainText: 'I feel angry',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
 
-stager.extendStep('mood2', {
-widget: {
-		name: 'ChoiceManager',
-		root: 'container',
-		options: {
-			className: 'centered',
-			mainText: 'How are you feeling right now after completing the writing task?',
-			forms: [
-			{
-				name: 'ChoiceTable',
-				id: 'M2_1',
-				mainText: 'I feel angry',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_2',
-				mainText: 'I feel happy',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_3',
-				mainText: 'I feel offended',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_4',
-				mainText: 'I feel determined',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_5',
-				mainText: 'I feel sad',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_6',
-				mainText: 'I feel inspired',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_7',
-				mainText: 'I feel sorrowful',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_8',
-				mainText: 'I feel afraid',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_9',
-				mainText: 'I feel attentive',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			{
-				name: 'ChoiceTable',
-				id: 'M2_10',
-				mainText: 'I feel frightened',
-				choices: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5'
-			],
-			// requiredChoice: true,
-			left: 'Not at all',
-			right: 'Strongly',
-			},
-			
-			]
-		}
-		}
-    });	
+            {
+                name: 'ChoiceTable',
+                id: 'M2_2',
+                mainText: 'I feel happy',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_3',
+                mainText: 'I feel offended',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_4',
+                mainText: 'I feel determined',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_5',
+                mainText: 'I feel sad',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_6',
+                mainText: 'I feel inspired',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_7',
+                mainText: 'I feel sorrowful',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_8',
+                mainText: 'I feel afraid',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_9',
+                mainText: 'I feel attentive',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            {
+                name: 'ChoiceTable',
+                id: 'M2_10',
+                mainText: 'I feel frightened',
+                choices: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            requiredChoice: true,
+            left: 'Not at all',
+            right: 'Strongly',
+            },
+
+            ]
+        })
+        }
+    });
+
 
 stager.extendStep('game', {
 	widget: {
