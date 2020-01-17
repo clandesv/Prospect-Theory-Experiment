@@ -1,17 +1,11 @@
 # Risk or No Risk?
 
-<<<<<<< HEAD
-Camille Landesvatter <clandesvmail.uni-mannheim.de>
-Tiffany Myers <tmyers@mail.uni-mannheim.de>
-David Joukl <djoukl@mail.uni-mannheim.de>
-=======
 Camille Landesvatter <clandesv@mail.uni-mannheim.de>
 
 Tiffany Myers <tmyers@mail.uni-mannheim.de>
 
 David Joukl <djoukl@mail.uni-mannheim.de>
 
->>>>>>> 831f93a3c01ce2f469cb37a56d9428c92cfe407b
 Vanisa Vongphanakhone <vvongpha@mail.uni-mannheim.de>
 
 ---
