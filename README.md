@@ -1,8 +1,17 @@
 # Risk or No Risk?
 
+<<<<<<< HEAD
 Camille Landesvatter <clandesvmail.uni-mannheim.de>
 Tiffany Myers <tmyers@mail.uni-mannheim.de>
 David Joukl <djoukl@mail.uni-mannheim.de>
+=======
+Camille Landesvatter <clandesv@mail.uni-mannheim.de>
+
+Tiffany Myers <tmyers@mail.uni-mannheim.de>
+
+David Joukl <djoukl@mail.uni-mannheim.de>
+
+>>>>>>> 831f93a3c01ce2f469cb37a56d9428c92cfe407b
 Vanisa Vongphanakhone <vvongpha@mail.uni-mannheim.de>
 
 ---
@@ -20,7 +29,7 @@ Literature shows that emotions have an additional effect on decision making. [Va
 
 This game thus seeks to replicate prior research and corroborate to them by apllying the mean idea to an online environment.
 
-From literature the following hypotheses are derived:
+From literature the following hypotheses are derived: 
 
 Assumption: People in the control condition (no emotional framing) are risk averse (in win frame) (% of people deciding risk-averse -> baseline)
 
